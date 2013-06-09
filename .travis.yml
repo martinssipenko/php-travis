@@ -15,8 +15,8 @@ env:
       HOEdi9W/5JcekWM4QQVjLGVptY9swXMmGs7hdOcPRavnUSKHaDk=
 
 install:
-  - echo "deb http://nginx.org/packages/ubuntu/ precise nginx" | tee -a /etc/apt/sources.list
-  - echo "deb-src http://nginx.org/packages/ubuntu/ precise nginx" | tee -a /etc/apt/sources.list
+  - echo "deb http://nginx.org/packages/ubuntu/ precise nginx" | sudo tee -a /etc/apt/sources.list
+  - echo "deb-src http://nginx.org/packages/ubuntu/ precise nginx" | sudo tee -a /etc/apt/sources.list
   - apt-get update
   - apt-get install nginx
 
