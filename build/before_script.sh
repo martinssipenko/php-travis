@@ -5,7 +5,7 @@ echo "=== Initializing CI environment ==="
 chmod +x ./build/script.sh
 
 composer self-update
-composer install --dev
+composer install --dev --no-interaction
 
 sudo service nginx start
 sleep 3
