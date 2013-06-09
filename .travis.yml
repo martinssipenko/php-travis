@@ -17,8 +17,8 @@ env:
 install:
   - echo "deb http://nginx.org/packages/ubuntu/ precise nginx" | sudo tee -a /etc/apt/sources.list
   - echo "deb-src http://nginx.org/packages/ubuntu/ precise nginx" | sudo tee -a /etc/apt/sources.list
-  - apt-get update
-  - apt-get install nginx
+  - sudo apt-get update
+  - sudo apt-get install nginx
 
 before_script:
 - chmod +x ./build/before_script.sh
