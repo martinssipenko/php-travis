@@ -5,10 +5,7 @@ php:
 
 before_script:
   - composer self-update
-  - composer -V
-  - pear version
-  - pear config-set auto_discover 1 && pear install pear.phpqatools.org/phpqatools && phpenv rehash
-  - phpcs -v
+  - composer install --dev
 
 notifications:
   email: false
