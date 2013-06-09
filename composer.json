@@ -17,7 +17,7 @@
     "sebastian/phpcpd": "*",
     "pdepend/pdepend": "1.1.0",
     "phpmd/phpmd": "1.4.*",
-    "mayflower/php-codebrowser": "1.0.*@dev",
+    "mayflower/php-codebrowser": "1.0.*@dev"
   },
   "autoload": {
     "psr-0": {
