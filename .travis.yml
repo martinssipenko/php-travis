@@ -8,7 +8,6 @@ before_script:
   - sh -c ./build/before_script.sh
 
 script:
-  - chmod +x ./build/script.sh
   - sh -c ./build/script.sh
 
 notifications:

@@ -5,6 +5,6 @@ echo "=== Initializing CI environment ==="
 composer self-update
 composer install --dev
 
-mkdir -p build/logs
+chmod +x ./build/script.sh
 
 printf "\n=== The CI environment has been initialized ===\n"
