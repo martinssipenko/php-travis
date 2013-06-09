@@ -1,14 +1,25 @@
 language: php
 
 php:
-  - 5.4
+- 5.4
+
+env:
+  global:
+  - secure: |-
+      INDyzYyCRh4D98/+3oXWtsg3ZTvm2monkvX5stocr9pU1EgjvR0jt2Yj3f7x
+      rXbgFdkmWe3tkMRTw3NjOax0j1r9ujVRg3yMkJVVWEXk+58zo3qCxbr+FswB
+      llUbIbYHgvknclEkgbdDd9B5vlGSid20Uvk61bf4mrEb4/jTJk0=
+  - secure: |-
+      cbF7os/wYgC5ydkWsEynp53OXN/XkcLda2wa1bOoPwxxOA7szb+AithbobZD
+      4TE81f9kyvlmXRmUh+ZOFAqyhAuB8LYy9YjxPrT4WlVbLMpB/gK3geG1i/Ui
+      HOEdi9W/5JcekWM4QQVjLGVptY9swXMmGs7hdOcPRavnUSKHaDk=
 
 before_script:
-  - chmod +x ./build/before_script.sh
-  - sh -c ./build/before_script.sh
+- chmod +x ./build/before_script.sh
+- sh -c ./build/before_script.sh
 
 script:
-  - sh -c ./build/script.sh
+- sh -c ./build/script.sh
 
 notifications:
   email: false
