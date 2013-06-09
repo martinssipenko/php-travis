@@ -4,6 +4,8 @@ php:
   - 5.4
 
 before_script:
+  - chmod +x ./build/before_script.sh
+  - chmod +x ./build/script.sh
   - sh -c ./build/before_script.sh
 
 notifications:
