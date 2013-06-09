@@ -5,8 +5,11 @@ php:
 
 before_script:
   - chmod +x ./build/before_script.sh
-  - chmod +x ./build/script.sh
   - sh -c ./build/before_script.sh
+
+script:
+  - chmod +x ./build/script.sh
+  - sh -c ./build/script.sh
 
 notifications:
   email: false
