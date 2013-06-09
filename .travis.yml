@@ -5,6 +5,7 @@ php:
 
 before_script:
   - php -v
+  - ant -v
 
 notifications:
   email: false
