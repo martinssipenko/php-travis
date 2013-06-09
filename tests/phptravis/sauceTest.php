@@ -1,0 +1,26 @@
+<?php
+
+namespace phptravis\Test;
+
+class MySauceTestCase extends \Sauce\Sausage\WebDriverTestCase
+{
+    public static $browsers = array(
+        array(
+            'browserName' => 'chrome',
+            'desiredCapabilities' => array(
+                'platform' => 'Linux'
+          )
+        )
+    );
+
+    public function setUp()
+    {
+        parent::setUp();
+        $this->setBrowserUrl('http://localhost');
+    }
+
+    public function testTitle()
+    {
+        $this->assertContains("Welcome to nginx!", $this->title());
+    }
+}
