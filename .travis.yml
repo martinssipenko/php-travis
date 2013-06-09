@@ -4,7 +4,7 @@ php:
   - 5.4
 
 before_script:
-	- sh -c ./build/before_script.sh
+  - sh -c ./build/before_script.sh
 
 notifications:
   email: false
