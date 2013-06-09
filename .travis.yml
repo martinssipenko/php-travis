@@ -15,6 +15,8 @@ env:
       HOEdi9W/5JcekWM4QQVjLGVptY9swXMmGs7hdOcPRavnUSKHaDk=
 
 install:
+  - sudo add-apt-repository ppa:nginx/stable
+  - sudo apt-get update
   - sudo apt-get update
   - sudo apt-get install nginx
 

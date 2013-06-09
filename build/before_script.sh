@@ -11,6 +11,7 @@ sudo service nginx start
 sleep 3
 
 vendor/bin/sauce_config $SAUCE_USERNAME $SAUCE_ACCESS_KEY
-vendor/bin/sauce_connect
+
+./build/sauce_connect_setup.sh
 
 printf "\n=== The CI environment has been initialized ===\n"

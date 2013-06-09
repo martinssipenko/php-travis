@@ -18,8 +18,7 @@
     "pdepend/pdepend": "1.1.0",
     "phpmd/phpmd": "1.4.*",
     "mayflower/php-codebrowser": "1.0.*@dev",
-    "sauce/sausage": ">=0.4.0",
-    "sauce/connect": ">=3.0"
+    "sauce/sausage": ">=0.4.0"
   },
   "autoload": {
     "psr-0": {
