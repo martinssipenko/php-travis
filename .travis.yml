@@ -22,6 +22,7 @@ install:
 before_script:
 - chmod +x ./build/before_script.sh
 - sh -c ./build/before_script.sh
+- sh -c ./build/sauce_connect_setup.sh
 
 script:
 - sh -c ./build/script.sh
