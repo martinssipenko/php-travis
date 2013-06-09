@@ -1,6 +1,9 @@
 #!/bin/sh
 
+echo "Build number:" $TRAVIS_BUILD_NUMBER
 echo "=== Initializing CI environment ==="
+
+SAUCE_BUILD=$TRAVIS_BUILD_NUMBER
 
 chmod +x ./build/script.sh
 
