@@ -22,6 +22,6 @@ class MySauceTest extends \Sauce\Sausage\WebDriverTestCase
     public function testTitle()
     {
         $this->url('http://localhost');
-        $this->assertContains("Welcome to nginx!", $this->title());
+        $this->assertContains("wordpress", $this->title());
     }
 }
