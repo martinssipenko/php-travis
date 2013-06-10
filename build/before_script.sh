@@ -17,7 +17,8 @@ sudo cp ./build/travis_nginx.conf /etc/nginx/nginx.conf
 sudo service nginx start
 sleep 3
 
-export WWW_ROOT=/usr/share/nginx/www
+export WWW_ROOT=/usr/share/nginx/html
+sudo rm -r $WWW_ROOT/*
 mysql -e 'CREATE DATABASE wordpress_test;' -uroot
 
 wget -nv -O /tmp/wordpress.tar.gz https://github.com/WordPress/WordPress/tarball/$WP_VERSION
