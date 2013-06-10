@@ -22,6 +22,6 @@ sudo rm -r $WWW_ROOT/*
 mysql -e 'CREATE DATABASE wordpress_test;' -uroot
 
 wget -nv -O /tmp/wordpress.tar.gz https://github.com/WordPress/WordPress/tarball/$WP_VERSION
-tar --strip-components=1 -zxmf /tmp/wordpress.tar.gz -C $WWW_ROOT
+sudo tar --strip-components=1 -zxmf /tmp/wordpress.tar.gz -C $WWW_ROOT
 
 printf "\n=== The CI environment has been initialized ===\n"
