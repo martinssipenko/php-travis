@@ -16,8 +16,15 @@ class MySauceTest extends \Sauce\Sausage\WebDriverTestCase
             'browserName' => 'chrome',
             'desiredCapabilities' => array(
                 'platform' => 'Linux'
-          )
-        )
+            ),
+        ),
+        array(
+            'browserName' => 'firefox',
+            'desiredCapabilities' => array(
+                'version' => '15',
+                'platform' => 'VISTA'
+            )
+        ),
     );
 
     public function setUp()
