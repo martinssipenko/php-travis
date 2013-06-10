@@ -16,6 +16,8 @@ sudo cp ./build/travis_nginx.conf /etc/nginx/nginx.conf
 
 sudo service nginx start
 sleep 3
+sudo service php-fpm start
+sleep 3
 
 mysql -e 'CREATE DATABASE wordpress_test;' -uroot
 
