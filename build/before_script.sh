@@ -20,16 +20,17 @@ sudo service php5-fpm restart
 sudo service php-fpm restart
 sleep 3
 
-mysql -e 'CREATE DATABASE wordpress_test;' -uroot
+mysql -uroot < ./build/wordpress.sql
 
 export WWW_ROOT=/usr/share/nginx/www
 sudo rm -r $WWW_ROOT
 sudo mkdir -p $WWW_ROOT
-sudo chown www-data $WWW_ROOT
+
+sudo cp ./build/wp-config.php $WWW_ROOT
 
 wget -nv -O /tmp/wordpress.tar.gz https://github.com/WordPress/WordPress/tarball/$WP_VERSION
 sudo tar --strip-components=1 -zxmf /tmp/wordpress.tar.gz -C $WWW_ROOT
 
-ls -la $WWW_ROOT
+sudo chown -R www-data $WWW_ROOT
 
 printf "\n=== The CI environment has been initialized ===\n"
