@@ -10,14 +10,10 @@ chmod +x ./build/script.sh
 composer self-update
 composer install --prefer-source --no-interaction --dev
 
-cat /etc/nginx/nginx.conf
-cat /etc/nginx/sites-enabled/default
 sudo cp ./build/travis_nginx.conf /etc/nginx/nginx.conf
 
 sudo service nginx restart
-sleep 3
 sudo service php5-fpm restart
-sudo service php-fpm restart
 sleep 3
 
 mysql -uroot < ./build/wordpress.sql
