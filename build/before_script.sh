@@ -10,7 +10,9 @@ chmod +x ./build/script.sh
 composer self-update
 composer install --prefer-source --no-interaction --dev
 
-cp ./build/travis_nginx.conf /etc/nginx/nginx.conf
+cat /etc/nginx/nginx.conf
+cat /etc/nginx/sites-enabled/default
+sudo cp ./build/travis_nginx.conf /etc/nginx/nginx.conf
 
 sudo service nginx start
 sleep 3
