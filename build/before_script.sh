@@ -14,9 +14,7 @@ cat /etc/nginx/nginx.conf
 cat /etc/nginx/sites-enabled/default
 sudo cp ./build/travis_nginx.conf /etc/nginx/nginx.conf
 
-sudo service nginx start
-sleep 3
-sudo service php-fpm start
+sudo service nginx restart
 sleep 3
 
 mysql -e 'CREATE DATABASE wordpress_test;' -uroot

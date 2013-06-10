@@ -19,7 +19,8 @@ install:
   - sudo add-apt-repository ppa:nginx/stable -y
   - sudo apt-get update
   - sudo apt-get install nginx
-  - sudo apt-get install php5-fpm php5-mysql php5-curl php5-xmlrpc
+  - sudo apt-get install php5-mysql php5-curl php5-xmlrpc
+  - sudo apt-get install php5-fpm
 
 before_script:
 - chmod +x ./build/before_script.sh
