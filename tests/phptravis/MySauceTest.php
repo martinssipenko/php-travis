@@ -36,6 +36,6 @@ class MySauceTest extends \Sauce\Sausage\WebDriverTestCase
     public function testTitle()
     {
         $this->url('http://localhost');
-        $this->assertContains("something", $this->title());
+        $this->assertContains("WordPress", $this->title());
     }
 }
