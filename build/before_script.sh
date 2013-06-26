@@ -14,11 +14,6 @@ composer self-update
 # Install package dependancies
 composer install --prefer-source --no-interaction --dev
 
-# Prepare plugin
-cp -r src test-plugin
-zip -r test-plugin.zip test-plugin/
-rm -r test-plugin/
-
 # Replace nginx config file
 sudo cp ./build/travis_nginx.conf /etc/nginx/nginx.conf
 
@@ -36,6 +31,11 @@ sudo mysqladmin -uroot password root
 
 # Create MySQL database for WordPress
 mysql -u root -proot -e 'CREATE DATABASE IF NOT EXISTS `wp_selenium`;'
+
+# Prepare plugin
+cp -r src test-plugin
+zip -r test-plugin.zip test-plugin/
+rm -r test-plugin/
 
 ./vendor/bin/wp core download --version=$WP_VERSION --path=$WWW_ROOT
 ./vendor/bin/wp core config --path=$WWW_ROOT --dbname=wp_selenium --dbuser=root --dbpass=root
