@@ -6,4 +6,4 @@ echo "=== Starting tests ==="
 # vendor/bin/phploc --count-tests --exclude vendor/ lib/ tests/ > build/logs/phploc.txt
 # vendor/bin/phploc --count-tests --log-xml build/logs/phploc.xml lib/ tests/
 # vendor/bin/phpcs --report=checkstyle --report-file=build/logs/checkstyle.xml --standard=PSR2 lib/ tests/
-vendor/bin/paratest --phpunit=vendor/bin/phpunit --coverage-text
+vendor/bin/phpunit --coverage-text

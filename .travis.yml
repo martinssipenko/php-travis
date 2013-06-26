@@ -35,5 +35,6 @@ notifications:
   email: false
 
 addons:
+  sauce_connect: true
   hosts:
     - selenium.localhost
