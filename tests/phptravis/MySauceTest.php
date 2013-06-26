@@ -10,7 +10,7 @@ class MySauceTest extends \Sauce\Sausage\WebDriverTestCase
     {
         //If ran on travis use saucelabs for browser testing
         if( getenv('TRAVIS_BUILD_NUMBER') == true) {
-            $this->browsers = array(
+            self::$browsers = array(
                     array(
                         'browserName' => 'iphone',
                         'desiredCapabilities' => array(
