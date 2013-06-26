@@ -30,6 +30,7 @@ class MySauceTest extends \Sauce\Sausage\WebDriverTestCase
     public function setUp()
     {
         parent::setUp();
+        $this->setBuild(getenv('TRAVIS_BUILD_NUMBER'));
         $this->setBrowserUrl('http://localhost');
     }
 
