@@ -1,0 +1,7 @@
+
+    "phploc/phploc": "*",
+    "squizlabs/php_codesniffer": "dev-master",
+    "sebastian/phpcpd": "*",
+    "pdepend/pdepend": "1.1.0",
+    "phpmd/phpmd": "1.4.*",
+    "mayflower/php-codebrowser": "1.0.*@dev",
