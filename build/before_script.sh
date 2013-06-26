@@ -29,17 +29,18 @@ sleep 3
 # Make sure www root directory exists
 sudo rm -rf $WWW_ROOT
 sudo mkdir -p $WWW_ROOT
+sudo chmod -R 0777 $WWW_ROOT
 
 # set mysql password
 sudo mysqladmin -uroot password root
 
 # Create MySQL database for WordPress
-sudo mysql -u root -proot -e 'CREATE DATABASE IF NOT EXISTS `wp_selenium`;'
+mysql -u root -proot -e 'CREATE DATABASE IF NOT EXISTS `wp_selenium`;'
 
-sudo ./vendor/bin/wp core download --version=$WP_VERSION --path=$WWW_ROOT
-sudo ./vendor/bin/wp core config --path=$WWW_ROOT --dbname=wp_selenium --dbuser=root --dbpass=root
-sudo ./vendor/bin/wp core install --path=$WWW_ROOT --title=WordPress --admin_email=test@test.test --admin_password=admin
-sudo ./vendor/bin/wp plugin install test-plugin.zip --path=$WWW_ROOT --activate
+./vendor/bin/wp core download --version=$WP_VERSION --path=$WWW_ROOT
+./vendor/bin/wp core config --path=$WWW_ROOT --dbname=wp_selenium --dbuser=root --dbpass=root
+./vendor/bin/wp core install --path=$WWW_ROOT --title=WordPress --admin_email=test@test.test --admin_password=admin
+./vendor/bin/wp plugin install test-plugin.zip --path=$WWW_ROOT --activate
 
 rm test-plugin.zip
 
