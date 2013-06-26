@@ -1,32 +1,45 @@
 #!/bin/sh
 
-echo "Build number:" $TRAVIS_BUILD_NUMBER
-echo "=== Initializing CI environment ==="
+# Set www root dir variable
+export WWW_ROOT=/home/vagrant/sites/selenium.localhost
 
-SAUCE_BUILD=$TRAVIS_BUILD_NUMBER
+echo "Build number:" $TRAVIS_BUILD_NUMBER
+# echo "=== Initializing CI environment ==="
 
 chmod +x ./build/script.sh
 
+# Update composer to latest version
 composer self-update
+
+# Install package dependancies
 composer install --prefer-source --no-interaction --dev
 
+# Prepare plugin
+cp -r src test-plugin
+zip -r test-plugin.zip test-plugin/
+rm -r test-plugin/
+
+# Replace nginx config file
 sudo cp ./build/travis_nginx.conf /etc/nginx/nginx.conf
 
 sudo service nginx restart
 sudo service php5-fpm restart
 sleep 3
 
-mysql -uroot < ./build/wordpress.sql
-
-export WWW_ROOT=/usr/share/nginx/www
-sudo rm -r $WWW_ROOT
+# Make sure www root directory exists
+sudo rm -rf $WWW_ROOT
 sudo mkdir -p $WWW_ROOT
 
-sudo cp ./build/wp-config.php $WWW_ROOT
+# Create MySQL database for WordPress
+mysql -u root -proot -e 'CREATE DATABASE IF NOT EXISTS `wp_selenium`;'
 
-wget -nv -O /tmp/wordpress.tar.gz https://github.com/WordPress/WordPress/tarball/$WP_VERSION
-sudo tar --strip-components=1 -zxmf /tmp/wordpress.tar.gz -C $WWW_ROOT
+./vendor/bin/wp core download --version=$WP_VERSION --path=$WWW_ROOT
+./vendor/bin/wp core config --path=$WWW_ROOT --dbname=wp_selenium --dbuser=root --dbpass=root
+./vendor/bin/wp core install --path=$WWW_ROOT --title=WordPress --admin_email=test@test.test --admin_password=admin
+./vendor/bin/wp plugin install test-plugin.zip --path=$WWW_ROOT --activate
+
+rm test-plugin.zip
 
 sudo chown -R www-data $WWW_ROOT
 
-printf "\n=== The CI environment has been initialized ===\n"
+# printf "\n=== The CI environment has been initialized ===\n"

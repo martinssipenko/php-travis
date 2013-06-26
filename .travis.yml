@@ -13,7 +13,7 @@ env:
       cbF7os/wYgC5ydkWsEynp53OXN/XkcLda2wa1bOoPwxxOA7szb+AithbobZD
       4TE81f9kyvlmXRmUh+ZOFAqyhAuB8LYy9YjxPrT4WlVbLMpB/gK3geG1i/Ui
       HOEdi9W/5JcekWM4QQVjLGVptY9swXMmGs7hdOcPRavnUSKHaDk=
-  - WP_VERSION=3.5.1
+  - WP_VERSION=3.4.2
 
 install:
   - sudo add-apt-repository ppa:nginx/stable -y
