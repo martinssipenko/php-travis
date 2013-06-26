@@ -4,38 +4,36 @@ namespace phptravis\Test;
 
 class MySauceTest extends \Sauce\Sausage\WebDriverTestCase
 {
-    public static $browsers;
+    public static $browsers = array(
+        array(
+            'browserName' => 'iphone',
+            'desiredCapabilities' => array(
+                'version' => '6',
+                'platform' => 'OS X 10.8'
+            )
+        ),
+        array(
+            'browserName' => 'chrome',
+            'desiredCapabilities' => array(
+                'platform' => 'Linux'
+            ),
+        ),
+        array(
+            'browserName' => 'firefox',
+            'desiredCapabilities' => array(
+                'version' => '15',
+                'platform' => 'VISTA'
+            )
+        ),
+    );
 
     public function setUp()
     {
         //If ran on travis use saucelabs for browser testing
         if(getenv('TRAVIS_BUILD_NUMBER') == true) {
-            var_dump( '   TRAVIS   ' );
-            self::$browsers = array(
-                    /*
-                    array(
-                        'browserName' => 'iphone',
-                        'desiredCapabilities' => array(
-                            'version' => '6',
-                            'platform' => 'OS X 10.8'
-                        )
-                    ),
-                    array(
-                        'browserName' => 'chrome',
-                        'desiredCapabilities' => array(
-                            'platform' => 'Linux'
-                        ),
-                    ),
-                    */
-                    array(
-                        'browserName' => 'firefox',
-                        'desiredCapabilities' => array(
-                            'version' => '15',
-                            'platform' => 'VISTA'
-                        )
-                    ),
-                );
+            //
         } else {
+            self::$browsers = array();
             $browser =  array(
                 'browserName' => 'firefox',
                 'local' => true,
