@@ -9,8 +9,10 @@ class MySauceTest extends \Sauce\Sausage\WebDriverTestCase
     public function setUp()
     {
         //If ran on travis use saucelabs for browser testing
-        if( getenv('TRAVIS_BUILD_NUMBER') == true) {
+        if(getenv('TRAVIS_BUILD_NUMBER') == true) {
+            var_dump( '   TRAVIS   ' );
             self::$browsers = array(
+                    /*
                     array(
                         'browserName' => 'iphone',
                         'desiredCapabilities' => array(
@@ -24,6 +26,7 @@ class MySauceTest extends \Sauce\Sausage\WebDriverTestCase
                             'platform' => 'Linux'
                         ),
                     ),
+                    */
                     array(
                         'browserName' => 'firefox',
                         'desiredCapabilities' => array(
