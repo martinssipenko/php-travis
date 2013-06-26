@@ -39,7 +39,7 @@ rm -r test-plugin/
 
 ./vendor/bin/wp core download --version=$WP_VERSION --path=$WWW_ROOT
 ./vendor/bin/wp core config --path=$WWW_ROOT --dbname=wp_selenium --dbuser=root --dbpass=root
-./vendor/bin/wp core install --path=$WWW_ROOT --title=WordPress --admin_email=test@test.test --admin_password=admin
+./vendor/bin/wp core install --path=$WWW_ROOT --url=http://selenium.localhost/ --title=WordPress --admin_email=test@test.test --admin_password=admin
 ./vendor/bin/wp plugin install test-plugin.zip --path=$WWW_ROOT --activate
 
 rm test-plugin.zip
