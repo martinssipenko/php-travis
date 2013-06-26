@@ -15,8 +15,11 @@
          bootstrap="tests/bootstrap.php">
 
     <testsuites>
-        <testsuite name="Dummy Test Suite">
-            <directory>./tests/</directory>
+        <testsuite name="Unit">
+            <directory>./tests/phptravis/Unit</directory>
+        </testsuite>
+        <testsuite name="Selenium">
+            <directory>./tests/phptravis/Selenium</directory>
         </testsuite>
     </testsuites>
 
@@ -25,4 +28,8 @@
             <directory suffix=".php">./lib/</directory>
         </whitelist>
     </filter>
+
+    <logging>
+      <log type="coverage-text" target="php://stdout" showUncoveredFiles="false"/>
+    </logging>
 </phpunit>
