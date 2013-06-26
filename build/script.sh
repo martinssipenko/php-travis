@@ -7,5 +7,5 @@ echo "=== Starting tests ==="
 # vendor/bin/phploc --count-tests --log-xml build/logs/phploc.xml lib/ tests/
 # vendor/bin/phpcs --report=checkstyle --report-file=build/logs/checkstyle.xml --standard=PSR2 lib/ tests/
 
-vendor/bin/phpunit
-vendor/bin/paratest --phpunit=vendor/bin/phpunit
+vendor/bin/phpunit --testsuite=Unit
+vendor/bin/paratest --phpunit=vendor/bin/phpunit tests/phptravis/Selenium
